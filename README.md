@@ -1,7 +1,7 @@
 # Hand-Detector-with-Pose-Estimation  
 Code to recognize objects in people's hands using pose estimation for hand detection and VGG classifier  
 
-## Open Pose, a human body keypoint estimator, was used for detecting objects in people’s hands.  
+## Open Pose, a human body keypoint estimator, was used for creating hand detector
 
 ## Method:  
 The idea is to use the orientation of hand with keypoints corresponding to shoulder, elbow and wrist of hand to predict the bounding box around hand and use the image within bounding box to predict the category of object in hand. Even if the segmentation technique fails due to obstruction or intersecting objects, the hand keypoints which are visible can lead to assist in identification of object in hand.  
@@ -46,3 +46,23 @@ For an image file img.jpg, a dictionary img.txt exists
 3. For testing - Videos  
 
 ## Running instructions
+
+1. Refer tensorboy/pytorch_Realtime_Multi-Person_Pose_Estimation from https://github.com/tensorboy/pytorch_Realtime_Multi-Person_Pose_Estimation  
+Follow the instructions to run it
+
+2. Create dataset for pose estimation in folders images and dicts
+
+3. Create dataset for hand detector
+python picture_demo.py  
+Select left or right hand using arrow keys to save hand keypoint coordinates and bounding box coordinates of object in hand in data.csv file  
+
+4. Train hand detector model
+python train.py
+
+5. Test hand detector model
+python picture_demo_test.py
+
+6. Train a classifier model using images of objects under consideration
+
+7. Recognize objects in videos
+python web_demo.py --classes "obj1,obj2,..."

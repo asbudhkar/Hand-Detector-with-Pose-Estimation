@@ -66,3 +66,8 @@ python picture_demo_test.py
 
 7. Recognize objects in videos
 python web_demo.py --classes "obj1,obj2,..."
+
+## Future Work
+Improving Open Pose keypoint detection and trying other methods for pose estimation like Deep cut and Alpha Pose can be done in future  
+Adding hueristic to detect which hand has object and automatically create dataset  
+Research techniques for hand estimation to detect the bounding box with more accuracy  
